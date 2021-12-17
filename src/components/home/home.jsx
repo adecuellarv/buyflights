@@ -20,10 +20,10 @@ const Home = ({ flightsInfo }) => {
     return (
         <>
             <div className="row">
-                <div className="col-9">
+                <div className="col-9 md-col-12">
                     <Form flightsInfo={flightsInfo} />
                 </div>
-                <div className="col-3">
+                <div className="col-3 md-hide">
                     <Slider />
                 </div>
             </div>

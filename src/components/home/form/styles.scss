@@ -2,7 +2,6 @@
 
 .div-bgform{
     background: $color-blue-strong;
-    padding: 20px;
     height: 100vh;
 }
 .div-form{
@@ -29,4 +28,11 @@
 .div-btn-form{
     text-align: left;
     margin-top: 20px;
+}
+
+/* responsive */
+@media only screen and (max-width: 712px) {
+    .div-form{
+        width: 90%;
+    }
 }
