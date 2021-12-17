@@ -1,7 +1,7 @@
 import { LOAD_CITIES } from "../constants/action-types";
 
 const initialState = {
-  cities: {}
+  cities: []
 };
 
 function citiesReducer(state = initialState, action) {
