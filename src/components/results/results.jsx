@@ -16,7 +16,7 @@ const Results = ({ flightsInfo }) => {
                 <div className="col-10">
                     <div className="column-right-results">
                         <Search flightsInfo={flightsInfo} />
-                        <List />
+                        <List flightsInfo={flightsInfo} />
                     </div>
                 </div>
             </div>

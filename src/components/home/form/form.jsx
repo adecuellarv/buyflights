@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types';
 import { withRouter } from "react-router";
 import { useHistory } from "react-router-dom";
@@ -16,6 +16,14 @@ const Form = ({ flightsInfo }) => {
     const [showPeopleForm, setShowPeopleForm] = useState(false);
     const [countPeople, setCountPeople] = useState(infoSearch.people);
     const history = useHistory();
+
+    useEffect(() => {
+        if (infoSearch.from && infoSearch.to && infoSearch.people) {
+            setCountPeople(parseInt(infoSearch.people));
+            const resp = searchCompatibleCities(flightsInfo.cities, infoSearch.from);
+            if (resp) setCompatiblesCities(resp);
+        }
+    }, []);
 
     const changeFROM = (e) => {
         const value = e.target.value;
@@ -45,7 +53,7 @@ const Form = ({ flightsInfo }) => {
     };
 
     const goTOResults = () => {
-        if(infoSearch.from && infoSearch.to && infoSearch.people){
+        if (infoSearch.from && infoSearch.to && infoSearch.people) {
             history.push(`/resultados?from=${infoSearch.from}&to=${infoSearch.to}&people=${infoSearch.people}`);
         }
     };
@@ -57,7 +65,10 @@ const Form = ({ flightsInfo }) => {
                 <h2 className="subtitle-form">¿A donde te gustaría ir?</h2>
                 <div className="section-form">
                     <label className="label-form label-form-white">Origen</label>
-                    <select onChange={changeFROM} className="select-form">
+                    <select
+                        onChange={changeFROM}
+                        value={infoSearch.from}
+                        className="select-form">
                         <option value="0">Selecciona...</option>
                         {idx(flightsInfo, _ => _.cities.length) && flightsInfo.cities.map((item, key) =>
                             <option key={key} value={item.id}>{item.name}</option>
@@ -66,7 +77,10 @@ const Form = ({ flightsInfo }) => {
                 </div>
                 <div className="section-form">
                     <label className="label-form label-form-white">Destino</label>
-                    <select onChange={changeTO} className="select-form" disabled={!compatiblesCities.length}>
+                    <select 
+                        onChange={changeTO} 
+                        value={infoSearch.to}
+                        className="select-form" disabled={!compatiblesCities.length}>
                         <option value="0">Selecciona...</option>
                         {compatiblesCities.length && compatiblesCities.map((item, key) =>
                             <option key={key} value={item.id}>{item.name}</option>
