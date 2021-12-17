@@ -4,7 +4,7 @@ const initialState = {
   cities: {}
 };
 
-function categorysReducer(state = initialState, action) {
+function citiesReducer(state = initialState, action) {
   switch (action.type) {
     case LOAD_CITIES:
       return Object.assign({}, state, {
@@ -15,4 +15,4 @@ function categorysReducer(state = initialState, action) {
   }
 }
 
-export default categorysReducer;
+export default citiesReducer;
