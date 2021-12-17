@@ -1,9 +1,12 @@
 import React from "react";
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Sliderbar from "./sliderbar";
 import Search from "./search";
 import List from "./list";
+import './styles.scss';
 
-const Results = () => {
+const Results = ({ flightsInfo }) => {
     return (
         <>
             <div className="row">
@@ -11,12 +14,24 @@ const Results = () => {
                     <Sliderbar />
                 </div>
                 <div className="col-10">
-                    <Search />
-                    <List />
+                    <div className="column-right-results">
+                        <Search flightsInfo={flightsInfo} />
+                        <List />
+                    </div>
                 </div>
             </div>
         </>
     );
 };
 
-export default Results;
+Results.propTypes = {
+    flightsInfo: PropTypes.object
+};
+
+const mapStateToProps = state => {
+    return {
+        flightsInfo: state.flightsInfo
+    };
+};
+
+export default connect(mapStateToProps)(Results);

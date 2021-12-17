@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withRouter } from "react-router";
 import { useHistory } from "react-router-dom";
 import idx from "idx";
-import { searchCompatibleCities } from './functions';
+import { searchCompatibleCities } from '../../../functions/search';
 import './styles.scss';
 
 const infoSearch = {
@@ -46,7 +46,7 @@ const Form = ({ flightsInfo }) => {
 
     const goTOResults = () => {
         if(infoSearch.from && infoSearch.to && infoSearch.people){
-            history.push(`/resultados?from=${infoSearch.from}&to=${infoSearch.to}&${infoSearch.people}`);
+            history.push(`/resultados?from=${infoSearch.from}&to=${infoSearch.to}&people=${infoSearch.people}`);
         }
     };
 

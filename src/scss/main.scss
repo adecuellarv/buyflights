@@ -64,6 +64,13 @@ body {
   width: 8.333%;
 }
 
+/* Common */
+.card-shadow {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 4px 6px 9px 0px rgb(181 181 181 / 75%);
+}
+
 /* form */
 .select-form {
   width: 100%;
@@ -87,8 +94,58 @@ body {
   background: $color-yellow;
   cursor: pointer;
   transition: '1s';
-  &:hover{
-      background-color: $color-gray-light;
+  &:hover {
+    background-color: $color-gray-light;
+  }
+}
+.div-people {
+  background: $color-white;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  position: relative;
+}
+.div-btn-form {
+  text-align: left;
+  margin-top: 20px;
+}
+.div-form-people {
+  position: absolute;
+  left: 0;
+  background: $color-white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: $color-gray-light;
+  width: 94%;
+  top: 50px;
+}
+.btn-people-form {
+  background: $color-yellow;
+  padding: 7px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: 0px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.labe-people-form {
+  background: $color-white;
+  padding: 15px 50px;
+  position: relative;
+  top: 15px;
+  font-size: 19px;
+  font-weight: 800;
+}
+.close-div-form {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  padding: 10px;
+  label {
+    font-size: 11px;
   }
 }
 
@@ -97,7 +154,10 @@ body {
   .md-col-12 {
     width: 100%;
   }
-  .md-hide{
-      display: none;
+  .md-hide {
+    display: none;
+  }
+  .div-form-people {
+    width: 92%;
   }
 }
