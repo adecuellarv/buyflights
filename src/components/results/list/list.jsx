@@ -18,7 +18,7 @@ const List = ({ match, location, flightsInfo }) => {
         if (qst && idx(flightsInfo, _ => _.cities.length)) {
             setSchedule(getSchedule(flightsInfo.cities, infoSearch));
         }
-    }, [match, location]);
+    }, [match, location, flightsInfo]);
 
     const addItem = () => {
 

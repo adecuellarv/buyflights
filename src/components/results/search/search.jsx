@@ -16,13 +16,13 @@ const Search = ({ match, location, flightsInfo }) => {
 
     useEffect(() => {
         const qst = queryString.parse(location.search);
-        if (qst.from && qst.to && qst.people) {
+        if (flightsInfo.cities.length && qst.from && qst.to && qst.people) {
             infoSearch = qst;
             setCountPeople(parseInt(qst.people));
             const resp = searchCompatibleCities(flightsInfo.cities, infoSearch.from);
             if (resp) setCompatiblesCities(resp);
         }
-    }, [match, location]);
+    }, [match, location, flightsInfo]);
 
     const changeFROM = (e) => {
         const value = e.target.value;
