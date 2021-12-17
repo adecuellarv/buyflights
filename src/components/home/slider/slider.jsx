@@ -23,7 +23,7 @@ const Slider = () => {
                 default:
                     break;
             }
-        }, 3700);
+        }, 4700);
     }, []);
     return (
         <img className="img-slider" src={img} alt="slider" />

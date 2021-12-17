@@ -3,3 +3,10 @@
     height: 100vh;
     object-fit: cover;
 }
+
+/* responsive */
+@media only screen and (max-height: 550px) {
+    .img-slider{
+        height: auto;
+    }
+}
