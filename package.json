@@ -16,7 +16,8 @@
     "web-vitals": "^2.1.2"
   },
   "devDependencies": {
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "sass": "^1.43.5"
   },
   "scripts": {
     "start": "react-scripts start",

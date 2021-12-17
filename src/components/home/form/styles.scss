@@ -1,0 +1,32 @@
+@import '../../../scss/variables.scss';
+
+.div-bgform{
+    background: $color-blue-strong;
+    padding: 20px;
+    height: 100vh;
+}
+.div-form{
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.title-form{
+    color: $color-white;
+    line-height: 10px;
+}
+.subtitle-form{
+    color: $color-gray-light;
+}
+.label-form-white{
+    color: $color-white;
+}
+.div-people{
+    background: $color-white;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+.div-btn-form{
+    text-align: left;
+    margin-top: 20px;
+}
