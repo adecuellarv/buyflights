@@ -30,7 +30,7 @@ const List = ({ match, location, flightsInfo }) => {
             <h1>Resultados</h1>
             <div className="row">
                 {idx(schedule, _ => _.schedule.length) && schedule.schedule.map((item, key) =>
-                    <div className="col-3">
+                    <div className="col-4 sm-col-12">
                         <div className="card-schedule">
                             <div className="card-shadow">
 
@@ -43,7 +43,9 @@ const List = ({ match, location, flightsInfo }) => {
                                     <span><strong>{item.arrive.date}</strong> {item.arrive.time}</span>
                                 </div>
                                 <div className="div-price">
-                                    <label>${item.price} MXN</label>
+                                    <div>
+                                        <label>${item.price} MXN</label>
+                                    </div>
                                     <button className="button-form" onClick={addItem}>Agregar</button>
                                 </div>
                             </div>

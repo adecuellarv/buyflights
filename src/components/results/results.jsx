@@ -10,10 +10,10 @@ const Results = ({ flightsInfo }) => {
     return (
         <>
             <div className="row">
-                <div className="col-2">
+                <div className="col-2 md-hide">
                     <Sliderbar />
                 </div>
-                <div className="col-10">
+                <div className="col-10 md-col-12">
                     <div className="column-right-results">
                         <Search flightsInfo={flightsInfo} />
                         <List flightsInfo={flightsInfo} />

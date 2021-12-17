@@ -61,7 +61,7 @@ const Search = ({ match, location, flightsInfo }) => {
             <div className="search-div">
                 <h1>Busqueda</h1>
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-6 sm-col-12">
                         <div className="component-form-search">
                             <label className="label-form-search">Origen</label>
                             <select
@@ -75,7 +75,7 @@ const Search = ({ match, location, flightsInfo }) => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6 sm-col-12">
                         <div className="component-form-search">
                             <label className="label-form-search">Destino</label>
                             <select
@@ -89,7 +89,7 @@ const Search = ({ match, location, flightsInfo }) => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6 sm-col-12">
                         <label className="label-form label-form-white">¿Cuantas personas?</label>
                         <div className="div-people" >
                             <label onClick={() => setShowPeopleForm(!showPeopleForm)}>{countPeople} Persona</label>
@@ -116,7 +116,7 @@ const Search = ({ match, location, flightsInfo }) => {
                             }
                         </div>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6 sm-col-12">
                         <div className="div-btn-form-search">
                             <button className="button-form" onClick={showResults}>Buscar</button>
                         </div>
