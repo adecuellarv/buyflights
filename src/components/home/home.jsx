@@ -10,7 +10,7 @@ const Home = ({ flightsInfo }) => {
     console.log('flightsInfo', flightsInfo)
     const dispatch = useDispatch();
     useEffect(() => {
-        //funcGetCities();
+        funcGetCities();
     }, []);
 
     const funcGetCities = async () => {

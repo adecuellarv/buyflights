@@ -1,47 +1,92 @@
 @import '../../../scss/variables.scss';
 
-.div-bgform{
-    background: $color-blue-strong;
-    height: 100vh;
+.div-bgform {
+  background: $color-blue-strong;
+  height: 100vh;
 }
-.div-form{
-    width: 60%;
-    margin: 0 auto;
-    padding-top: 50px;
+.div-form {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 50px;
 }
-.title-form{
-    color: $color-white;
-    line-height: 10px;
+.title-form {
+  color: $color-white;
+  line-height: 10px;
 }
-.subtitle-form{
-    color: $color-gray-light;
+.subtitle-form {
+  color: $color-gray-light;
 }
-.label-form-white{
-    color: $color-white;
+.label-form-white {
+  color: $color-white;
 }
-.div-people{
-    background: $color-white;
-    padding: 15px;
-    border: 1px solid #eee;
-    border-radius: 5px;
+.div-people {
+  background: $color-white;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  position: relative;
 }
-.div-btn-form{
-    text-align: left;
-    margin-top: 20px;
+.div-btn-form {
+  text-align: left;
+  margin-top: 20px;
+}
+.div-form-people {
+  position: absolute;
+  left: 0;
+  background: $color-white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 15px;
+  background: $color-gray-light;
+  width: 94%;
+  top: 50px;
+}
+.btn-people-form {
+  background: $color-yellow;
+  padding: 7px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: 0px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.labe-people-form {
+  background: $color-white;
+  padding: 15px 50px;
+  position: relative;
+  top: 15px;
+  font-size: 19px;
+  font-weight: 800;
+}
+.close-div-form {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  padding: 10px;
+  label {
+    font-size: 11px;
+  }
 }
 
 /* responsive */
 @media only screen and (max-height: 550px) {
-    .div-bgform{
-        height: auto;
-        padding-bottom: 30px;
+  .div-bgform {
+    height: auto;
+    padding-bottom: 30px;
+  }
+}
+@media only screen and (max-width: $width-md) {
+    .div-form-people {
+        width: 92%;
     }
 }
-@media only screen and (max-width: 712px) {
-    .div-form{
-        width: 90%;
-    }
-    .title-form{
-        line-height: initial;
-    }
+@media only screen and (max-width: $width-sm) {
+  .div-form {
+    width: 90%;
+  }
+  .title-form {
+    line-height: initial;
+  }
 }
