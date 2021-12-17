@@ -1,0 +1,39 @@
+@import '../../../scss/variables.scss';
+
+.bg-div-filter{
+    background: $color-blue-strong;
+    padding: 15px;
+    height: 100vh;
+    color: $color-white;
+    h1{
+        
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    span{
+        font-size: 10px;
+    }
+    .container-filter{
+        margin-top: 20px;
+        .group-filter{
+            margin-top: 10px;
+            .father-filter{
+                label{
+                    font-weight: 400;
+                    font-size: 16px;
+                    color: $color-white;
+                    cursor: pointer;
+                }
+                .childrens-filters{
+                    margin-left: 20px;
+                    label{
+                        font-size: 14px;
+                        display: block;
+                        color: $color-gray-light;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
