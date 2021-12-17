@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { setCities } from "../../store/actions/cities";
 import { getCities } from "../../rest/cities";
 
-const Home = () => {
+const Home = ({ flightsInfo }) => { console.log('flightsInfo', flightsInfo)
     const dispatch = useDispatch();
     useEffect(() => {
-        funcGetCities();
+        //funcGetCities();
     }, []);
 
     const funcGetCities = async () => {
@@ -16,4 +16,9 @@ const Home = () => {
     return (<h1>Home</h1>);
 };
 
-export default Home;
+const mapStateToProps = state => {
+    return {
+        flightsInfo: state.flightsInfo
+    };
+};
+export default connect(mapStateToProps)(Home);
