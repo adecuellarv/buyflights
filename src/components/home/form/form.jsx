@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from 'prop-types';
+import { withRouter } from "react-router";
+import { useHistory } from "react-router-dom";
 import idx from "idx";
 import { searchCompatibleCities } from './functions';
 import './styles.scss';
@@ -13,6 +15,7 @@ const Form = ({ flightsInfo }) => {
     const [compatiblesCities, setCompatiblesCities] = useState([]);
     const [showPeopleForm, setShowPeopleForm] = useState(false);
     const [countPeople, setCountPeople] = useState(infoSearch.people);
+    const history = useHistory();
 
     const changeFROM = (e) => {
         const value = e.target.value;
@@ -41,7 +44,11 @@ const Form = ({ flightsInfo }) => {
         }
     };
 
-    console.log('info', infoSearch);
+    const goTOResults = () => {
+        if(infoSearch.from && infoSearch.to && infoSearch.people){
+            history.push(`/resultados?from=${infoSearch.from}&to=${infoSearch.to}&${infoSearch.people}`);
+        }
+    };
 
     return (
         <div className="div-bgform">
@@ -94,7 +101,7 @@ const Form = ({ flightsInfo }) => {
                     </div>
                 </div>
                 <div className="div-btn-form">
-                    <button className="button-form">Buscar</button>
+                    <button className="button-form" onClick={goTOResults}>Buscar</button>
                 </div>
             </div>
         </div>
@@ -105,4 +112,4 @@ Form.propTypes = {
     flightsInfo: PropTypes.object
 };
 
-export default Form;
+export default withRouter(Form);

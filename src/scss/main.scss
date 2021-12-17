@@ -85,6 +85,11 @@ body {
   padding: 18px 60px;
   border-radius: 10px;
   background: $color-yellow;
+  cursor: pointer;
+  transition: '1s';
+  &:hover{
+      background-color: $color-gray-light;
+  }
 }
 
 /* responsive */
