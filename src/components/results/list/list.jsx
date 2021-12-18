@@ -70,8 +70,8 @@ const List = ({ match, location, flightsInfo }) => {
                 <Modal
                     title={"Elemento Agregado"}
                     linkInfo={{
-                        text: "Ir a carrito",
-                        link: "/carrito"
+                        text: "Ir a reservas",
+                        link: "/reservas"
                     }}
                     showModal={setShowModal}
                 />

@@ -1,0 +1,51 @@
+@import '../../scss/variables.scss';
+
+.div-cart {
+  width: 50%;
+  margin: 0 auto;
+  .div-listcart {
+    margin-top: 15px;
+  }
+  .item-cart {
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+  }
+  .div-sched-info {
+    margin-top: 5px;
+    .sched-info {
+      font-size: 12px;
+    }
+  }
+  .div-delete-item {
+    padding-top: 25px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .div-price {
+    padding-top: 5px;
+    text-align: center;
+  }
+  .div-text-total {
+    text-align: right;
+  }
+  .div-total {
+    text-align: center;
+  }
+  .div-btn-checkoutcart {
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+/* responsive */
+@media only screen and (max-width: $width-md) {
+    .div-cart {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: $width-sm) {
+    .div-cart {
+        width: 100%;
+    }
+}

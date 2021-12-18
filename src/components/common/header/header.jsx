@@ -10,9 +10,11 @@ const Header = () => {
             <div className="div-home-hd">
                 <Link to="/">Inicio</Link>
             </div>
-            <div className="cart-div">
-                <FontAwesomeIcon icon={faShoppingBag} className="icon-cart-hd" />
-            </div>
+            <Link to="/reservas">
+                <div className="cart-div">
+                    <FontAwesomeIcon icon={faShoppingBag} className="icon-cart-hd" />
+                </div>
+            </Link>
         </div>
     )
 };
