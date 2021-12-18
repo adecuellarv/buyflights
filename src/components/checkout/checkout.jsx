@@ -88,6 +88,7 @@ const Checkout = () => {
                                         <button
                                             disabled={!name || !lastName || !address || !email}
                                             onClick={saveData}
+                                            style={{background: !name || !lastName || !address || !email ? '#eee' : '#e3b21e'}}
                                         >Finalizar</button>
                                     </div>
                                 </div>
