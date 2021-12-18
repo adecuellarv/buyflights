@@ -66,7 +66,7 @@ const Form = ({ flightsInfo }) => {
     return (
         <div className="div-bgform">
             <div className="div-form">
-                <h1 className="title-form">Descrube tu nuevo destino</h1>
+                <h1 className="title-form">Descubre tu nuevo destino</h1>
                 <h2 className="subtitle-form">¿A donde te gustaría ir?</h2>
                 <div className="section-form">
                     <label className="label-form label-form-white">Origen</label>

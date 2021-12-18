@@ -24,7 +24,7 @@ const Modal = ({ title, description, linkInfo, showModal, showSecondLink = true 
                     {showSecondLink &&
                         <Link className="link-back-home" to="/">Regresar a Inicio</Link>
                     }
-                    <button className="btn-link-modal"><Link to={linkInfo.link}>{linkInfo.text}</Link></button>
+                    <Link to={linkInfo.link}><button className="btn-link-modal">{linkInfo.text}</button></Link>
                 </div>
             </div>
         </>

@@ -82,8 +82,10 @@ const Cart = ({ flightsInfo }) => {
 
 
                             <div className="div-btn-checkoutcart">
-                                <button className="button-form"
-                                ><Link to="/finalizar">Reservar</Link></button>
+                                <Link to="/finalizar">
+                                    <button className="button-form"
+                                    >Reservar</button>
+                                </Link>
                             </div>
                         </div>
                     }
