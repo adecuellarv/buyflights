@@ -39,8 +39,23 @@
   border-radius: 10px;
   background: $color-yellow;
   cursor: pointer;
+  color: #000;
   a {
     text-decoration: none;
     color: #000;
+  }
+}
+
+@media only screen and (max-width: $width-md) {
+  .modal-div {
+    width: 80%;
+    left: 10%;
+  }
+}
+
+@media only screen and (max-width: $width-sm) {
+  .modal-div {
+    width: 90%;
+    left: 1%;
   }
 }

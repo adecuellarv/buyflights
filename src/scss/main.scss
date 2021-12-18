@@ -77,12 +77,14 @@ body {
   padding: 15px;
   border: 1px solid #eee;
   border-radius: 5px;
+  -webkit-appearance: none;
 }
 .input-form{
   width: 90%;
   padding: 15px;
   border: 1px solid #eee;
   border-radius: 5px;
+  -webkit-appearance: none;
 }
 .label-form {
   font-size: 17px;
@@ -100,6 +102,7 @@ body {
   background: $color-yellow;
   cursor: pointer;
   transition: '1s';
+  color: #000;
   &:hover {
     background-color: $color-gray-light;
   }
@@ -114,6 +117,7 @@ body {
 .div-btn-form {
   text-align: left;
   margin-top: 20px;
+  color: #000;
 }
 .div-form-people {
   position: absolute;
@@ -135,6 +139,7 @@ body {
   border: 0px;
   font-size: 30px;
   cursor: pointer;
+  color: #000;
 }
 .labe-people-form {
   background: $color-white;
@@ -171,4 +176,12 @@ body {
   .sm-col-12 {
     width: 100%;
   }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	select:focus,
+	textarea:focus,
+	input:focus {
+		font-size: 14px;
+	}
 }
