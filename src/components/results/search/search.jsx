@@ -12,6 +12,7 @@ const Search = ({ match, location, flightsInfo }) => {
     const [compatiblesCities, setCompatiblesCities] = useState([]);
     const [showPeopleForm, setShowPeopleForm] = useState(false);
     const [countPeople, setCountPeople] = useState(parseInt(infoSearch.people));
+    const [toValue, setTOValue] = useState();
     const history = useHistory();
 
     useEffect(() => {
@@ -19,6 +20,7 @@ const Search = ({ match, location, flightsInfo }) => {
         if (flightsInfo.cities.length && qst.from && qst.to && qst.people) {
             infoSearch = qst;
             setCountPeople(parseInt(qst.people));
+            setTOValue(qst.to);
             const resp = searchCompatibleCities(flightsInfo.cities, infoSearch.from);
             if (resp) setCompatiblesCities(resp);
         }
@@ -28,6 +30,8 @@ const Search = ({ match, location, flightsInfo }) => {
         const value = e.target.value;
         if (value !== '0') {
             infoSearch.from = value;
+            infoSearch.to = '';
+            setTOValue('');
             const resp = searchCompatibleCities(flightsInfo.cities, value);
             if (resp) setCompatiblesCities(resp);
         }
@@ -37,6 +41,7 @@ const Search = ({ match, location, flightsInfo }) => {
         const value = e.target.value;
         if (value !== '0') {
             infoSearch.to = value;
+            setTOValue(value);
         }
     };
 
@@ -80,7 +85,7 @@ const Search = ({ match, location, flightsInfo }) => {
                             <label className="label-form-search">Destino</label>
                             <select
                                 onChange={changeTO}
-                                value={infoSearch.to}
+                                value={toValue}
                                 className="select-form">
                                 <option value="0">Selecciona...</option>
                                 {compatiblesCities.length && compatiblesCities.map((item, key) =>
