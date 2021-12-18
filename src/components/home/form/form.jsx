@@ -15,11 +15,13 @@ const Form = ({ flightsInfo }) => {
     const [compatiblesCities, setCompatiblesCities] = useState([]);
     const [showPeopleForm, setShowPeopleForm] = useState(false);
     const [countPeople, setCountPeople] = useState(infoSearch.people);
+    const [toValue, setTOValue] = useState();
     const history = useHistory();
 
     useEffect(() => {
         if (infoSearch.from && infoSearch.to && infoSearch.people) {
             setCountPeople(parseInt(infoSearch.people));
+            setTOValue(infoSearch.to);
             const resp = searchCompatibleCities(flightsInfo.cities, infoSearch.from);
             if (resp) setCompatiblesCities(resp);
         }
@@ -29,6 +31,8 @@ const Form = ({ flightsInfo }) => {
         const value = e.target.value;
         if (value !== '0') {
             infoSearch.from = value;
+            infoSearch.to = '';
+            setTOValue('');
             const resp = searchCompatibleCities(flightsInfo.cities, value);
             if (resp) setCompatiblesCities(resp);
         }
@@ -38,6 +42,7 @@ const Form = ({ flightsInfo }) => {
         const value = e.target.value;
         if (value !== '0') {
             infoSearch.to = value;
+            setTOValue(value);
         }
     };
 
@@ -79,7 +84,7 @@ const Form = ({ flightsInfo }) => {
                     <label className="label-form label-form-white">Destino</label>
                     <select 
                         onChange={changeTO} 
-                        value={infoSearch.to}
+                        value={toValue}
                         className="select-form" disabled={!compatiblesCities.length}>
                         <option value="0">Selecciona...</option>
                         {compatiblesCities.length && compatiblesCities.map((item, key) =>

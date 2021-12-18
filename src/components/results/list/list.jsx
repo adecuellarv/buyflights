@@ -5,27 +5,31 @@ import Skeleton from 'react-loading-skeleton';
 import queryString from 'query-string';
 import idx from "idx";
 import { getSchedule } from './function';
+import { addTOCart } from "../../../functions/cart";
 
 import './styles.scss';
+import Modal from "../../common/modal";
 
 const List = ({ match, location, flightsInfo }) => {
     const [infoSearch, setInfoSearch] = useState({});
     const [schedule, setSchedule] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         const qst = queryString.parse(location.search);
         setInfoSearch(qst);
-        if (qst && idx(flightsInfo, _ => _.cities.length)) {
+        if (qst.from && qst.from && qst.people && idx(flightsInfo, _ => _.cities.length)) {
             setSchedule([]);
             setTimeout(() => {
-                setSchedule(getSchedule(flightsInfo.cities, infoSearch));
+                setSchedule(getSchedule(flightsInfo.cities, qst));
             }, 600);
 
         }
     }, [match, location, flightsInfo]);
 
-    const addItem = () => {
-
+    const addItem = (data) => {
+        addTOCart({...data, ...infoSearch});
+        setShowModal(true);
     };
 
     return (
@@ -49,7 +53,7 @@ const List = ({ match, location, flightsInfo }) => {
                                     <div>
                                         <label>${item.price} MXN</label>
                                     </div>
-                                    <button className="button-form" onClick={addItem}>Agregar</button>
+                                    <button className="button-form" onClick={() => addItem(item)}>Agregar</button>
                                 </div>
                             </div>
                         </div>
@@ -62,6 +66,16 @@ const List = ({ match, location, flightsInfo }) => {
                     </div>
                 )}
             </div>
+            {showModal &&
+                <Modal
+                    title={"Elemento Agregado"}
+                    linkInfo={{
+                        text: "Ir a carrito",
+                        link: "/carrito"
+                    }}
+                    showModal={setShowModal}
+                />
+            }
         </div>
     );
 }
