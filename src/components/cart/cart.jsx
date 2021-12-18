@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import idx from "idx";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { getCart, deleteItemCart } from "../../functions/cart";
 import { getCity, getTotal } from "./functions";
 
 import './styles.scss';
+
 
 
 const Cart = ({ flightsInfo }) => {
@@ -81,7 +83,7 @@ const Cart = ({ flightsInfo }) => {
 
                             <div className="div-btn-checkoutcart">
                                 <button className="button-form"
-                                >Reservar</button>
+                                ><Link to="/finalizar">Reservar</Link></button>
                             </div>
                         </div>
                     }

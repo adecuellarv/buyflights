@@ -5,6 +5,7 @@ import Header from "../common/header";
 import Home from "../home";
 import Results from "../results";
 import Cart from "../cart";
+import Checkout from "../checkout";
 
 import { setCities } from "../../store/actions/cities";
 import { getCities } from "../../rest/cities";
@@ -29,6 +30,9 @@ const Dome = () => {
             </Route>
             <Route path="/reservas" exact >
                 <Cart />
+            </Route>
+            <Route path="/finalizar" exact >
+                <Checkout />
             </Route>
         </Router>
     );

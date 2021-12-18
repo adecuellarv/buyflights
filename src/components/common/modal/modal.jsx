@@ -5,7 +5,7 @@ import loading from './img/success.gif';
 import './styles.scss';
 import './success.scss';
 
-const Modal = ({ title, description, linkInfo, showModal }) => {
+const Modal = ({ title, description, linkInfo, showModal, showSecondLink = true }) => {
     return (
         <>
             <div className="modal-cap" onClick={() => showModal(false)} />
@@ -21,7 +21,9 @@ const Modal = ({ title, description, linkInfo, showModal }) => {
                 </div>
                 <p>{description}</p>
                 <div className="links-modal">
-                    <Link className="link-back-home" to="/">Regresar a Inicio</Link>
+                    {showSecondLink &&
+                        <Link className="link-back-home" to="/">Regresar a Inicio</Link>
+                    }
                     <button className="btn-link-modal"><Link to={linkInfo.link}>{linkInfo.text}</Link></button>
                 </div>
             </div>

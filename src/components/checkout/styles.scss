@@ -34,22 +34,27 @@
   .div-btn-checkoutcart {
     text-align: center;
     margin-top: 20px;
-    a{
-        text-decoration: none;
-        color: #000;
+    button {
+      font-size: 16px;
+      border: 0px;
+      padding: 18px 60px;
+      border-radius: 10px;
+      background: $color-yellow;
+      cursor: pointer;
+      transition: '1s';
     }
   }
 }
 
 /* responsive */
 @media only screen and (max-width: $width-md) {
-    .div-cart {
-        width: 80%;
-    }
+  .div-cart {
+    width: 80%;
+  }
 }
 
 @media only screen and (max-width: $width-sm) {
-    .div-cart {
-        width: 100%;
-    }
+  .div-cart {
+    width: 100%;
+  }
 }

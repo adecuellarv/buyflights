@@ -13,6 +13,10 @@ export const getCart = () => {
     return reactLocalStorage.getObject(cartName).length ? reactLocalStorage.getObject(cartName) : [];
 };
 
+export const clearCart = () => {
+    reactLocalStorage.clear();
+};
+
 export const addTOCart = (infoProduct) => {
     const cartItems = reactLocalStorage.getObject(cartName).length ? reactLocalStorage.getObject(cartName) : [];
 
